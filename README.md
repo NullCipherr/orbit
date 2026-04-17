@@ -1,6 +1,6 @@
 <div align="center">
   <img src="docs/assets/orbit-logo.png" alt="Orbit Logo" width="220" />
-  <h1>Event Horizon Engine</h1>
+  <h1>ORBIT — Optimized Rendering for Black-hole Interactive Telemetry</h1>
   <p><i>Simulação interativa de buraco negro (métrica de Kerr aproximada) com renderização GPU em tempo real via WebGL2 + Worker</i></p>
 
   <p>
