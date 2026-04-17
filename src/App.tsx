@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import BlackHoleEngine from './components/BlackHoleEngine';
+import OrbitEngine from './features/orbit-engine/OrbitEngine';
 
 export default function App() {
   return (
-    <main className="w-full h-screen bg-[#11131c]">
-      <BlackHoleEngine />
+    <main className="h-screen w-full bg-[#11131c]">
+      <OrbitEngine />
     </main>
   );
 }

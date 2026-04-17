@@ -1,6 +1,0 @@
-{
-  "name": "Event Horizon Engine",
-  "description": "A high-performance Black Hole simulation engine using React, WebGL, and OffscreenCanvas. Features Kerr metric approximation, gravitational lensing, and Doppler boosting.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
-}

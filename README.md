@@ -32,7 +32,7 @@ Documentação principal do projeto na raiz:
 
 ## Visão Geral
 
-O **Event Horizon Engine** é uma aplicação front-end focada em visualização física/estética de um buraco negro com:
+O **ORBIT** é uma aplicação front-end focada em visualização física/estética de um buraco negro com:
 
 - raymarching em fragment shader;
 - renderização desacoplada da UI usando `OffscreenCanvas` em `Web Worker`;
@@ -59,10 +59,10 @@ O **Event Horizon Engine** é uma aplicação front-end focada em visualização
 
 Fluxo principal:
 
-1. `src/components/BlackHoleEngine.tsx` cria o canvas, transfere para `OffscreenCanvas` e inicializa o worker.
-2. `src/workers/blackhole.worker.ts` compila shaders e executa o loop de render.
-3. A UI envia mensagens (`INIT`, `UPDATE_PARAMS`, `UPDATE_CAMERA`, `UPDATE_QUALITY`, `RESIZE`, `STOP`) para o worker.
-4. O worker atualiza uniforms e desenha um quad fullscreen com raymarching no fragment shader.
+1. `src/features/orbit-engine/OrbitEngine.tsx` compõe a tela da feature.
+2. `src/features/orbit-engine/hooks/useOrbitEngineController.ts` orquestra estado da UI, interação e mensagens com o worker.
+3. `src/features/orbit-engine/workers/orbitEngine.worker.ts` compila shaders e executa o loop de render.
+4. Componentes de apresentação em `src/features/orbit-engine/components/*` mantêm a UI desacoplada da lógica.
 
 ---
 
@@ -99,15 +99,29 @@ Observação importante:
 ```text
 .
 ├── src/
-│   ├── components/
-│   │   └── BlackHoleEngine.tsx
-│   ├── workers/
-│   │   └── blackhole.worker.ts
+│   ├── features/
+│   │   └── orbit-engine/
+│   │       ├── components/
+│   │       │   ├── OrbitControlPanel.tsx
+│   │       │   ├── OrbitEngineHeader.tsx
+│   │       │   ├── OrbitRangeControl.tsx
+│   │       │   ├── OrbitTelemetryFooter.tsx
+│   │       │   └── OrbitViewport.tsx
+│   │       ├── constants/
+│   │       │   └── orbitEngine.constants.ts
+│   │       ├── hooks/
+│   │       │   └── useOrbitEngineController.ts
+│   │       ├── types/
+│   │       │   └── orbitEngine.types.ts
+│   │       ├── utils/
+│   │       │   └── orbitTelemetry.ts
+│   │       ├── workers/
+│   │       │   └── orbitEngine.worker.ts
+│   │       └── OrbitEngine.tsx
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
 ├── index.html
-├── metadata.json
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
@@ -158,12 +172,7 @@ npm run lint
 
 ## Variáveis de Ambiente
 
-Arquivo de referência: `.env.example`.
-
-Variáveis existentes:
-
-- `GEMINI_API_KEY`: disponível no template atual (não é requisito para a simulação WebGL em si).
-- `APP_URL`: URL da aplicação quando hospedada.
+Atualmente, o projeto não exige variáveis de ambiente para execução local.
 
 ---
 
