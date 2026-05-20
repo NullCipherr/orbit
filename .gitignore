@@ -1,8 +1,62 @@
+# ==========================================
+# Dependências
+# ==========================================
 node_modules/
-build/
+.pnp/
+.pnp.js
+
+# ==========================================
+# Produção e Builds (CRA, Vite, Next.js)
+# ==========================================
 dist/
-coverage/
-.DS_Store
-*.log
-.env*
+build/
+out/
+.next/
+.vite/
+
+# ==========================================
+# Variáveis de Ambiente (Segurança)
+# ==========================================
+# Ignora todos os arquivos .env que contêm credenciais sensíveis
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Garante que o template do .env SEJA commitado no repositório
 !.env.example
+
+# ==========================================
+# Testes e Cobertura de Código
+# ==========================================
+coverage/
+*.lcov
+
+# ==========================================
+# Logs e Diagnósticos
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+
+# ==========================================
+# Arquivos de Sistema (OS artifacts)
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Configurações de IDEs e Editores (Opcional)
+# ==========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

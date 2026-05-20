@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Evoluir o **Event Horizon Engine** para maior robustez visual, previsibilidade de performance e maturidade de entrega.
+Evoluir o **ORBIT** para maior robustez visual, previsibilidade de performance e maturidade de entrega.
 
 ## Curto prazo
 
