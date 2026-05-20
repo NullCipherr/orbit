@@ -220,9 +220,26 @@ npm run lint
 
 ---
 
-## ⚖️ Licença
+## CI/CD
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+O projeto está configurado com GitHub Actions para:
+
+- **CI** em push/PR: instalação, validação de tipos e build.
+- **CD** em push na `main`: deploy automático no GitHub Pages.
+
+Workflows:
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/deploy-pages.yml`
+
+Configuração manual necessária (uma única vez no repositório):
+
+1. GitHub `Settings` -> `Pages`
+2. Em `Build and deployment`, selecionar `Source: GitHub Actions`
+
+---
+
+## Licença
 
 Este projeto é open-source sob a **MIT License**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
